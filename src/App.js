@@ -3,6 +3,7 @@ import { v4 as uuid4 } from 'uuid';
 import './App.css';
 import List from './component/List';
 import Alert from './component/Alert';
+
 function App() {
 	const [name, setName] = useState('');
 	const [list, setList] = useState(['']);
@@ -13,7 +14,7 @@ function App() {
 		e.preventDefault();
 		if (!name) {
 			// แสดง Alert
-			setAlert({ show: false, msg: 'กรุณาป้อนข้อมูล', type: 'error' });
+			setAlert({ show: true, msg: 'กรุณาป้อนข้อมูล', type: 'error' });
 		} else if (checkEditeItem && name) {
 			const result = list.map((item) => {
 				if (item.id === editid) {
